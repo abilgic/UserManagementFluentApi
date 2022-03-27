@@ -12,7 +12,7 @@ namespace UserManagementFluentApi.Entities
         public string RoleName { get; set; }
 
         public int UserRoleId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
     }
 }
