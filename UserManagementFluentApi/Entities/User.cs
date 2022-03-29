@@ -18,7 +18,7 @@ namespace UserManagementFluentApi.Entities
         public string City { get; set; }
         public string Town { get; set; }
         public virtual ICollection<UserRole> Roles { get; set; }
-        public virtual ICollection<UserPassword> UserPasswords { get; set; }
-        public virtual UserIdentityCard UserIdentityCard { get; set; }
+        //public virtual ICollection<UserPassword> UserPasswords { get; set; }
+        //public virtual UserIdentityCard UserIdentityCard { get; set; }
     }
 }

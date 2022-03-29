@@ -17,26 +17,27 @@ namespace UserManagementFluentApi.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseLazyLoadingProxies().UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=UserManagement;Trusted_Connection=True;");
+            //optionsBuilder.UseLazyLoadingProxies().UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=UserManagement;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=UserManagement;Trusted_Connection=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().
-                HasOne(u => u.UserIdentityCard)
-               .WithOne(g => g.User)
-               .HasForeignKey<UserIdentityCard>(s => s.UserIdentityCardId);
+            //modelBuilder.Entity<User>().
+            //    HasOne(u => u.UserIdentityCard)
+            //   .WithOne(g => g.User)
+            //   .HasForeignKey<UserIdentityCard>(s => s.UserIdentityCardId);
 
-            //modelBuilder.Entity<City>()
-            //       .HasOne(e => e.Country)
-            //       .WithMany(e => e.City)
-            //       .HasForeignKey(e => e.FKCountry)
-            //       .OnDelete(DeleteBehavior.Cascade); ;
+            ////modelBuilder.Entity<City>()
+            ////       .HasOne(e => e.Country)
+            ////       .WithMany(e => e.City)
+            ////       .HasForeignKey(e => e.FKCountry)
+            ////       .OnDelete(DeleteBehavior.Cascade); ;
 
-            modelBuilder.Entity<UserPassword>()
-                   .HasOne(e => e.User)
-                   .WithMany(e => e.UserPasswords)
-                   .HasForeignKey(e => e.UserPasswordId)
-                   .OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<UserPassword>()
+            //       .HasOne(e => e.User)
+            //       .WithMany(e => e.UserPasswords)
+            //       .HasForeignKey(e => e.UserPasswordId)
+            //       .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<User>()
                 .HasMany(r => r.Roles)

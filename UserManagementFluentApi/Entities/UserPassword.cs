@@ -13,8 +13,8 @@ namespace UserManagementFluentApi.Entities
         public string Password2 { get; set; }
         public string Password3 { get; set; }
 
-        public int UserPasswordId { get; set; }
-        public virtual User User { get; set; }
+        //public int UserPasswordId { get; set; }
+        //public virtual User User { get; set; }
 
     }
 }
