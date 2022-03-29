@@ -62,7 +62,7 @@ try
         //var userrole = usr.Roles.FirstOrDefault(u => u.Id == 1);
 
         ///Eager Loading
-        var users = db.Users.i;
+        //var users = db.Users.ii;
 
     }
 }
